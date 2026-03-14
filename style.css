@@ -1,0 +1,99 @@
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    color:#222;
+    line-height:1.6;
+    
+    }
+    
+    .container {
+    
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+    
+    }
+    
+    h1 {
+    
+    text-align:center;
+    font-size:36px;
+    
+    }
+    
+    .authors {
+    
+    text-align:center;
+    font-size:18px;
+    margin-top:10px;
+    
+    }
+    
+    .links {
+    
+    text-align:center;
+    margin:20px;
+    
+    }
+    
+    .links a {
+    
+    margin:0 10px;
+    text-decoration:none;
+    color:#0073e6;
+    font-weight:bold;
+    
+    }
+    
+    h2 {
+    
+    margin-top:50px;
+    border-bottom:1px solid #eee;
+    padding-bottom:5px;
+    
+    }
+    
+    ul {
+    
+    margin-left:20px;
+    
+    }
+    
+    .figure {
+    
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:30px;
+    
+    }
+    
+    .figure img {
+    
+    max-width:100%;
+    border-radius:6px;
+    
+    }
+    
+    .caption {
+    
+    font-size:14px;
+    color:#555;
+    margin-top:10px;
+    
+    }
+    
+    pre {
+    
+    background:#f4f4f4;
+    padding:15px;
+    overflow:auto;
+    
+    }
+    
+    hr {
+    
+    margin-top:50px;
+    margin-bottom:50px;
+    
+    }

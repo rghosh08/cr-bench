@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>CR-Bench: Evaluating the Real-World Utility of AI Code Review Agents</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>CR-Bench: Evaluating the Real-World Utility of AI Code Review Agents</h1>
+
+<p class="authors">
+Kristen Pereira*, Neelabh Sinha*, Rajat Ghosh, Debojyoti Dutta<br>
+Nutanix AI
+</p>
+
+<div class="links">
+<a href="paper/cr-bench.pdf">📄 Paper</a>
+<a href="#">📊 Dataset</a>
+<a href="#">💻 Code</a>
+<a href="#">📈 Leaderboard</a>
+</div>
+
+<hr>
+
+<h2>Abstract</h2>
+
+<p>
+Code review remains one of the most difficult software engineering tasks to automate
+because it lacks a formal verification signal and contains significant subjectivity.
+We introduce <b>CR-Bench</b>, a benchmarking dataset derived from SWE-Bench designed
+to evaluate AI code review agents in realistic pull-request settings.
+</p>
+
+<p>
+We also introduce <b>CR-Evaluator</b>, a fine-grained evaluation framework that measures
+not only bug detection accuracy but also developer-centric metrics such as usefulness
+and signal-to-noise ratio.
+</p>
+
+<hr>
+
+<h2>Example Code Review Task</h2>
+
+<div class="figure">
+
+<img src="assets/fig1_example.png">
+
+<p class="caption">
+Figure 1: Example CR-Bench instance showing a pull request, patch diff,
+and the review comment identifying the bug.
+</p>
+
+</div>
+
+<hr>
+
+<h2>Motivation</h2>
+
+<p>
+Automating code review is challenging because:
+</p>
+
+<ul>
+<li>Reviews can be subjective (style, refactoring, documentation)</li>
+<li>Multiple valid review interpretations may exist</li>
+<li>Many existing benchmarks rely on synthetic tasks</li>
+</ul>
+
+<p>
+CR-Bench focuses specifically on <b>objective defect detection</b> in real
+open-source repositories.
+</p>
+
+<hr>
+
+<h2>CR-Bench Dataset</h2>
+
+<p>
+CR-Bench converts SWE-Bench issues into code review tasks that include
+complete pull-request context.
+</p>
+
+<ul>
+<li>Full Pull Request context</li>
+<li>Patch diff</li>
+<li>Bug description</li>
+<li>Taxonomy labels (category, impact, severity)</li>
+</ul>
+
+<div class="figure">
+
+<img src="assets/fig2_pipeline.png">
+
+<p class="caption">
+Figure 2: CR-Bench pipeline for transforming SWE-Bench issues into code review tasks
+and evaluating agents using CR-Evaluator.
+</p>
+
+</div>
+
+<hr>
+
+<h2>Dataset Statistics</h2>
+
+<p>
+CR-Bench contains two dataset variants:
+</p>
+
+<ul>
+<li><b>CR-Bench</b>: 584 tasks</li>
+<li><b>CR-Bench-Verified</b>: 174 manually validated tasks</li>
+</ul>
+
+<div class="figure">
+
+<img src="assets/fig3_dataset.png">
+
+<p class="caption">
+Figure 3: Distribution of bug category, impact, and severity across CR-Bench datasets.
+</p>
+
+</div>
+
+<hr>
+
+<h2>CR-Evaluator</h2>
+
+<p>
+CR-Evaluator categorizes each generated review comment into:
+</p>
+
+<ul>
+<li><b>Bug Hit</b> — identifies the true defect</li>
+<li><b>Valid Suggestion</b> — useful but unrelated comment</li>
+<li><b>Noise</b> — incorrect or hallucinated comment</li>
+</ul>
+
+<p>
+The system measures both traditional and developer-centric metrics:
+</p>
+
+<ul>
+<li>Precision</li>
+<li>Recall</li>
+<li>F1 Score</li>
+<li>Usefulness Rate</li>
+<li>Signal-to-Noise Ratio (SNR)</li>
+</ul>
+
+<hr>
+
+<h2>Experiments</h2>
+
+<p>
+We evaluate two code review agents:
+</p>
+
+<ul>
+<li><b>Single-shot agent</b> — generates reviews in one pass</li>
+<li><b>Reflexion agent</b> — iteratively improves review suggestions</li>
+</ul>
+
+<hr>
+
+<h2>Results</h2>
+
+<p>
+Our experiments reveal a key trade-off between recall and signal quality.
+</p>
+
+<div class="figure">
+
+<img src="assets/fig4_recall.png">
+
+<p class="caption">
+Figure 4: Recall distribution across bug category, impact, and severity.
+</p>
+
+</div>
+
+<ul>
+<li>Reflexion improves recall but increases noise</li>
+<li>Single-shot provides higher signal-to-noise ratio</li>
+</ul>
+
+<hr>
+
+<h2>Conclusion</h2>
+
+<p>
+CR-Bench provides a realistic benchmark for evaluating AI code review
+agents in production-scale software repositories.
+</p>
+
+<hr>
+
+<h2>Citation</h2>
+
+<pre>
+@inproceedings{crbench2026,
+title={CR-Bench: Evaluating the Real-World Utility of AI Code Review Agents},
+author={Pereira, Kristen and Sinha, Neelabh and Ghosh, Rajat and Dutta, Debojyoti},
+booktitle={ICLR 2026 Workshop on Agents in the Wild},
+year={2026}
+}
+</pre>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
